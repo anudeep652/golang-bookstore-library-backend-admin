@@ -11,7 +11,7 @@ import (
 )
 
 func Router() *fiber.App {
-	err := godotenv.Load()
+	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal(err)
 	}

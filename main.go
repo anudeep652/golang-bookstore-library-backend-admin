@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	err := godotenv.Load()
+	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19,4 +19,5 @@ func main() {
 	fmt.Println(`app is listening on port $PORT`)
 
 	app.Listen(":" + os.Getenv("PORT"))
+
 }

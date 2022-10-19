@@ -90,7 +90,7 @@ var bookCollection *mongo.Collection
 // connect with mongodb
 func init() {
 
-	err := godotenv.Load()
+	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal(err)
 	}

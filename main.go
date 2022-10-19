@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"os"
 
 	"github.com/anudeep652/golang-bookstore-library-backend/router"
 	"github.com/joho/godotenv"
@@ -16,5 +15,5 @@ func main() {
 
 	app := book.Router()
 
-	app.Listen(":" + os.Getenv("PORT"))
+	app.Listen("0.0.0.0:$PORT")
 }

@@ -10,7 +10,6 @@ import (
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gofiber/fiber/v2"
-	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -90,10 +89,6 @@ var bookCollection *mongo.Collection
 // connect with mongodb
 func init() {
 
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatal(err)
-	}
 	connectionString := os.Getenv("MONGO_URI")
 	// client options
 	clientOptions := options.Client().ApplyURI(connectionString)

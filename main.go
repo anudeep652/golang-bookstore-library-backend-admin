@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"github.com/anudeep652/golang-bookstore-library-backend/router"
+	"github.com/joho/godotenv"
+	"os"
+)
 
 func main() {
-	fmt.Println("Hello")
+	_ = godotenv.Load()
+
+	app := book.Router()
+
+	app.Listen(":" + os.Getenv("PORT"))
 }

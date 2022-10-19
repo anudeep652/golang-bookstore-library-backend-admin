@@ -1,14 +1,20 @@
 package book
 
 import (
+	"log"
 	"os"
 
 	"github.com/anudeep652/golang-bookstore-library-backend/controller"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/joho/godotenv"
 )
 
 func Router() *fiber.App {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	router := fiber.New()
 	router.Use(cors.New(cors.Config{
